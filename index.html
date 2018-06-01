@@ -161,8 +161,7 @@
 </div>
 
 <footer>
-  <p><a href="http://htmlacademy.ru" class="footer-link"><img src="img/htmlacademy-logo.png" alt="HTML Academy"
-                                                              width="130">Сделано в HTML Academy</a>в 2017 году</p>
+  <p><a href="http://htmlacademy.ru" class="footer-link"><img src="img/htmlacademy-logo.png" alt="HTML Academy" width="130">Сделано в HTML Academy</a>в 2017 году</p>
 </footer>
 
 <template id="similar-wizard-template" style="display: none">
@@ -181,6 +180,40 @@
   </div>
 </template>
 
+<script>
+  var fireballSize = 22;
+
+  var getFireballSpeed = function (left) {
+    return left ? 5 : 2;
+  }
+
+  var wizardSpeed = 3;
+  var wizardWidth = 70;
+
+  var getWizardHeight = function () {
+    return 1.337 * wizardWidth;
+  }
+
+  console.log( getWizardHeight() );
+
+  var getWizardX = function (width) {
+    // Параметр width обозначает ширину игровой области
+    // Напишите функцию так, чтобы центр фигурки мага находился посередине игрового поля
+    var wizardPositionX = width / 2 - wizardWidth / 2;
+    return wizardPositionX;
+  }
+
+  console.log( getWizardX(700) );
+
+  var getWizardY = function (height) {
+    // Параметр height обозначает высоту игровой области
+    // Напишите функцию так, чтобы маг появлялся на высоте две трети игрового поля от земли
+    var wizardPositionY = height / 3 - getWizardHeight();
+    return wizardPositionY;
+  }
+
+  console.log( getWizardY(300) );
+</script>
 <script src="js/game.js"></script>
 
 </body>
