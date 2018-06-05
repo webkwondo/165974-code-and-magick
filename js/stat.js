@@ -16,7 +16,7 @@ var chartX = CLOUD_X + BLEED;
 var legendY = CLOUD_Y + BLEED + FONT_GAP;
 var legendHeight = legendY + FONT_GAP;
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   var offset = 10;
   ctx.beginPath();
@@ -33,7 +33,7 @@ var renderCloud = function(ctx, x, y, color) {
   ctx.fill();
 };
 
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
   for (var i = 0; typeof arr !== 'undefined' && arr.length > 0 && i < arr.length; i++) {
@@ -45,7 +45,7 @@ var getMaxElement = function(arr) {
   return maxElement;
 };
 
-window.renderStatistics = function(ctx, players, times) {
+window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
@@ -63,7 +63,7 @@ window.renderStatistics = function(ctx, players, times) {
     ctx.fillText(Math.round(times[i]), chartX + CHART_INDENT + (BAR_GAP + BAR_WIDTH) * i, CLOUD_Y + BLEED + legendHeight + MAX_BAR_HEIGHT * (1 - k));
     ctx.fillText(players[i], chartX + CHART_INDENT + (BAR_GAP + BAR_WIDTH) * i, CLOUD_Y + BLEED + legendHeight + GAP + MAX_BAR_HEIGHT + FONT_GAP);
     ctx.fillStyle = 'hsl(241, ' + randomSaturation + '%, 50%)';
-    if (players[i] == 'Вы') {
+    if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
     ctx.fillRect(chartX + CHART_INDENT + (BAR_GAP + BAR_WIDTH) * i, CLOUD_Y + BLEED + legendHeight + GAP + MAX_BAR_HEIGHT * (1 - k), BAR_WIDTH, barHeight);
