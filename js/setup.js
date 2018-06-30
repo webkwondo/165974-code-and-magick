@@ -6,9 +6,14 @@ userDialog.classList.remove('hidden');
 var names = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var lastnames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 
+var generateRandomNumber = function (rangeLength) {
+  var randomNumber = Math.round(Math.random() * rangeLength);
+  return randomNumber;
+}
+
 var getRandomArrayElement = function (arr) {
   if (typeof arr !== 'undefined' && arr.length > 0) {
-    var k = Math.round(Math.random() * (arr.length - 1));
+    var k = generateRandomNumber(arr.length - 1);
     var randomArrayElement = arr[k];
     return randomArrayElement;
   }
@@ -16,42 +21,23 @@ var getRandomArrayElement = function (arr) {
   return 0;
 };
 
-var mergeArrayItems = function (arr1, arr2) {
-  if (typeof arr1 !== 'undefined' && arr1.length > 0 &&
-      typeof arr2 !== 'undefined' && arr2.length > 0) {
-    var arr = [arr1, arr2];
-    var k = Math.round(Math.random());
-    var firstArr = arr[k];
-    var secondArr = arr[1 - k];
-    var mergedArrayItems = getRandomArrayElement(firstArr) + ' ' + getRandomArrayElement(secondArr);
-    return mergedArrayItems;
-  }
-
-  return 0;
+var mergeItems = function (item1, item2) {
+    var item = [item1, item2];
+    var k = generateRandomNumber(1);
+    var firstItem = item[k];
+    var secondItem = item[1 - k];
+    var mergedItems = firstItem + ' ' + secondItem;
+    return mergedItems;
 };
-
-// var mergeArrayItems = function(arr1, arr2) {
-//   var newArr = [];
-
-//   for(var i = 0, b = 0; i < arr1.length; i++) {
-//     var arrItem = arr1[i];
-//     for(var a = 0; a < arr2.length; a++, b++) {
-//       newArr[b] = arrItem + ' ' + arr2[a];
-//     }
-//   }
-
-//   return newArr;
-// }
-
-// var wizardNames = mergeArrayItems(names, lastnames);
-// var wizardName = getRandomArrayElement(wizardNames);
 
 var capitalizeFirstLetter = function (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
 var generateName = function () {
-  var generatedName = capitalizeFirstLetter(mergeArrayItems(names, lastnames));
+  var name = getRandomArrayElement(names);
+  var lastname = getRandomArrayElement(lastnames);
+  var generatedName = capitalizeFirstLetter(mergeItems(name, lastname));
   return generatedName;
 };
 
