@@ -9,7 +9,7 @@ var lastnames = ['да Марья', 'Верон', 'Мирабелла', 'Вал�
 var generateRandomNumber = function (rangeLength) {
   var randomNumber = Math.round(Math.random() * rangeLength);
   return randomNumber;
-}
+};
 
 var getRandomArrayElement = function (arr) {
   if (typeof arr !== 'undefined' && arr.length > 0) {
@@ -22,12 +22,12 @@ var getRandomArrayElement = function (arr) {
 };
 
 var mergeItems = function (item1, item2) {
-    var item = [item1, item2];
-    var k = generateRandomNumber(1);
-    var firstItem = item[k];
-    var secondItem = item[1 - k];
-    var mergedItems = firstItem + ' ' + secondItem;
-    return mergedItems;
+  var item = [item1, item2];
+  var k = generateRandomNumber(1);
+  var firstItem = item[k];
+  var secondItem = item[1 - k];
+  var mergedItems = firstItem + ' ' + secondItem;
+  return mergedItems;
 };
 
 var capitalizeFirstLetter = function (string) {
