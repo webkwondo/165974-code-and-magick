@@ -1,5 +1,7 @@
 'use strict';
 
+var ESC_KEYCODE = 27;
+var ENTER_KEYCODE = 13;
 var setup = document.querySelector('.setup');
 // setup.classList.remove('hidden');
 
@@ -80,8 +82,6 @@ similarListElement.appendChild(fragment);
 
 setup.querySelector('.setup-similar').classList.remove('hidden');
 
-var ESC_KEYCODE = 27;
-var ENTER_KEYCODE = 13;
 var setupOpen = document.querySelector('.setup-open');
 var setupClose = setup.querySelector('.setup-close');
 var userNameInput = setup.querySelector('.setup-user-name');
