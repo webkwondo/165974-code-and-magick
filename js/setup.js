@@ -3,7 +3,6 @@
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 var setup = document.querySelector('.setup');
-// setup.classList.remove('hidden');
 
 var names = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var lastnames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
